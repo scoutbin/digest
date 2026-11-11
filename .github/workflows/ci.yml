@@ -1,0 +1,8 @@
+name: CI
+on:
+  workflow_dispatch:
+jobs:
+  ci:
+    permissions:
+      contents: read
+    uses: scoutbin/spine/.github/workflows/go-ci.yml@6a1324e8c4eed65e861d91328b8cb6b75ef88e45 # v0.0.1

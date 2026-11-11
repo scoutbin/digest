@@ -1,0 +1,28 @@
+name: Release
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: Existing tag to release, such as v1.2.3 or v1.2.3-rc.1
+        required: true
+        type: string
+      publish:
+        description: Publish the release and its channels. Off runs a dry run only
+        required: false
+        type: boolean
+        default: false
+concurrency:
+  group: release
+  cancel-in-progress: false
+jobs:
+  release:
+    permissions:
+      contents: write
+      id-token: write
+      attestations: write
+    uses: scoutbin/spine/.github/workflows/go-release.yml@6a1324e8c4eed65e861d91328b8cb6b75ef88e45 # v0.0.1
+    with:
+      tag: ${{ inputs.tag }}
+      publish: ${{ inputs.publish }}
+    secrets:
+      homebrew-tap-deploy-key: ${{ secrets.HOMEBREW_TAP_DEPLOY_KEY }}
