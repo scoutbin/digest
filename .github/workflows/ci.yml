@@ -5,4 +5,4 @@ jobs:
   ci:
     permissions:
       contents: read
-    uses: scoutbin/spine/.github/workflows/go-ci.yml@6a1324e8c4eed65e861d91328b8cb6b75ef88e45 # v0.0.1
+    uses: scoutbin/spine/.github/workflows/go-ci.yml@5c38b2c951011b2ba967bd374cfbeb4a046d2c9d
