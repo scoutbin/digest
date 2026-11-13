@@ -41,8 +41,26 @@ Building from source requires Go 1.24.2 or later, as declared in `go.mod`. diges
 
 Build from the same commit or tag you are reporting against, so your results match the code the bug was reported on.
 
+```sh
+go build .
+go run . version
+go test ./...
+```
+
 The CI pipeline is defined in `.github/workflows/ci.yml`. Release steps are in `.github/workflows/release.yml`. Both use reusable workflows from the spine repository.
 
 ## Security vulnerabilities
 
 Do not report security vulnerabilities in public issues, pull requests, or discussions. Follow the process in [SECURITY.md](SECURITY.md).
+
+## Maintainers
+
+`install.sh`, `install.ps1` and `action.yml` are generated from `spine.json`. Do not edit them by hand. After changing `spine.json`, run `go tool spine gen` to regenerate them. `go tool spine gen --check` fails when they are stale.
+
+To release:
+
+1. On an up to date `main`, run `go tool spine change <major|minor|patch> "<message>"`. It adds the `CHANGELOG.md` section, commits it and creates the tag. It does not push.
+2. Push the commit and the tag.
+3. Start `release.yml` manually with the `tag` input. `publish` defaults to `false`, which runs a dry run. Set it to `true` to publish. The release fails if `CHANGELOG.md` has no section for the tag.
+
+See spine's [RELEASING.md](https://github.com/scoutbin/spine/blob/main/RELEASING.md).
