@@ -3,6 +3,7 @@
   "repo": "scoutbin/digest",
   "summary": "Turn logs into readable facts",
   "license": "Apache-2.0",
+  "alias": "dg",
   "channels": {
     "homebrew": { "tap": "scoutbin/homebrew-tap" },
     "npm": { "package": "@scoutbin/digest" },
