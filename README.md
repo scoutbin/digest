@@ -36,14 +36,14 @@ You can also download an archive from GitHub Releases. Archives are named `diges
 
 Set these as environment variables before running an installer.
 
-| Variable | Default | Purpose |
-| --- | --- | --- |
-| `DIGEST_VERSION` | newest release on the track | Install this tag, such as `v0.1.1`. Takes precedence over `DIGEST_TRACK` |
-| `DIGEST_TRACK` | `stable` | `stable`, `alpha`, `beta` or `rc` |
-| `DIGEST_INSTALL_DIR` | `~/.local/bin` (install.sh), `%LOCALAPPDATA%\digest\bin` (install.ps1) | Install directory |
-| `DIGEST_NO_MODIFY_PATH` | unset | Set to `1` to leave your PATH alone |
-| `DIGEST_GITHUB_TOKEN` | none | Token for the release lookup. Not used for downloads |
-| `DIGEST_DOWNLOAD_BASE_URL` | GitHub | install.sh only. Mirror for release assets, starting with `https://` or `file://`. Requires `DIGEST_VERSION` |
+| Variable                   | Default                                                                | Purpose                                                                                                      |
+| -------------------------- | ---------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------ |
+| `DIGEST_VERSION`           | newest release on the track                                            | Install this tag, such as `v0.1.1`. Takes precedence over `DIGEST_TRACK`                                     |
+| `DIGEST_TRACK`             | `stable`                                                               | `stable`, `alpha`, `beta` or `rc`                                                                            |
+| `DIGEST_INSTALL_DIR`       | `~/.local/bin` (install.sh), `%LOCALAPPDATA%\digest\bin` (install.ps1) | Install directory                                                                                            |
+| `DIGEST_NO_MODIFY_PATH`    | unset                                                                  | Set to `1` to leave your PATH alone                                                                          |
+| `DIGEST_GITHUB_TOKEN`      | none                                                                   | Token for the release lookup. Not used for downloads                                                         |
+| `DIGEST_DOWNLOAD_BASE_URL` | GitHub                                                                 | install.sh only. Mirror for release assets, starting with `https://` or `file://`. Requires `DIGEST_VERSION` |
 
 Example:
 
@@ -75,12 +75,12 @@ The action installs the digest binary. It does not run digest.
 
 The ref after `@` selects the action code, not the installed version. If you leave out `version`, the action installs the newest release on `track`, whatever the ref is. You can use a full commit SHA as the ref instead of the tag.
 
-| Input | Default | Purpose |
-| --- | --- | --- |
-| `version` | newest release on the track | Install this tag. Takes precedence over `track` |
-| `track` | `stable` | `stable`, `alpha`, `beta` or `rc` |
-| `install-dir` | `$RUNNER_TEMP/digest/bin` | Install directory |
-| `token` | `github.token` | Token for the release lookup |
+| Input         | Default                     | Purpose                                         |
+| ------------- | --------------------------- | ----------------------------------------------- |
+| `version`     | newest release on the track | Install this tag. Takes precedence over `track` |
+| `track`       | `stable`                    | `stable`, `alpha`, `beta` or `rc`               |
+| `install-dir` | `$RUNNER_TEMP/digest/bin`   | Install directory                               |
+| `token`       | `github.token`              | Token for the release lookup                    |
 
 Outputs: `version` (the installed tag) and `path` (the path to the executable).
 
