@@ -20,9 +20,10 @@ jobs:
       contents: write
       id-token: write
       attestations: write
-    uses: scoutbin/spine/.github/workflows/go-release.yml@91bcb4d64c2f74e04dd568d77f2221401fea0408 # v0.0.0-20261114115753-91bcb4d64c2f
+    uses: scoutbin/spine/.github/workflows/go-release.yml@7725632bf918607c50f3dd36854f8af436999d7b # v0.0.0-20261114215816-7725632bf918
     with:
       tag: ${{ inputs.tag }}
       publish: ${{ inputs.publish }}
+      homebrew-tap-app-client-id: ${{ vars.HOMEBREW_TAP_APP_CLIENT_ID }}
     secrets:
-      homebrew-tap-deploy-key: ${{ secrets.HOMEBREW_TAP_DEPLOY_KEY }}
+      homebrew-tap-app-private-key: ${{ secrets.HOMEBREW_TAP_APP_PRIVATE_KEY }}
