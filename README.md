@@ -88,7 +88,7 @@ Outputs: `version` (the installed tag) and `path` (the path to the executable).
 
 ## Feedback
 
-Report bugs and request features in [GitHub Issues](https://github.com/scoutbin/digest/issues). See [CONTRIBUTING.md](CONTRIBUTING.md) for what a good report includes. digest does not accept pull requests. Report security vulnerabilities as described in [SECURITY.md](SECURITY.md).
+Report bugs and request features in [GitHub Issues](https://github.com/scoutbin/digest/issues). See [CONTRIBUTING.md](https://github.com/scoutbin/.github/blob/main/CONTRIBUTING.md) for what a good report includes. digest does not accept pull requests. Report security vulnerabilities as described in [SECURITY.md](https://github.com/scoutbin/.github/blob/main/SECURITY.md).
 
 ## License
 
